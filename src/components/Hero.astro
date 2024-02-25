@@ -1,0 +1,114 @@
+---
+import { Image } from 'astro:assets';
+
+//import components
+import CTA from './CTA.astro';
+---
+
+<header class="section py-12 md:py-16 lg:py-20 xl:py-24">
+    <div class="inner-section w-[90%] max-w-[84rem] mx-auto">
+        <!-- Announcement Banner -->
+        <div class="banner-wrapper flex justify-center items-center mb-8 xl:mb-14">
+            <a class="group flex justify-center items-center bg-brand-100 hover:bg-brand-200 border border-neutral-900 p-1 pl-4 rounded-full shadow-md" href="https://www.cesu.urssaf.fr/info/accueil/beneficier-d-avantages/lavantage-fiscal/a-quel-avantage-fiscal-puis-je-p.html">
+                <div class=" text-neutral-700 text-fs-tiny text-center">
+                    <p class="mr-2 inline-block">
+                    Possibilité de paiement par CESU
+                    </p>
+                    <p>Réduction d'impôts à hauteur de 50%</p>
+                </div>
+                <svg 
+                    class="icon icon-tabler icon-tabler-arrow-up-right" width="32" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#191A1A" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M17 7l-10 10" />
+                    <path d="M8 7l9 0l0 9" />
+                </svg>
+            </a>
+        </div>
+         <!-- grid -->		
+        <div class="hidden lg:max-h-fit lg:grid lg:gap-y-0 lg:gap-x-8 xl:gap-x-10 2xl:gap-x-12 lg:grid-cols-2">
+            <div class="left space-y-8">
+                <div class="hero-text-wrapper space-y-2">
+                    <h1 class="tagline text-neutral-900 text-fs-tiny ">Votre coach sportif à Bordeaux</h1>
+                    <span class="font-semibold text-fs-h-xlarge">
+                        Faites le plein d'énergie!
+                    </span>
+                    <p class="text-fs-base">Retrouvez la forme, dessinez vos muscles, garder la ligne. Grâce à un programme sur-mesure de coaching sportif à domicile.</p>
+                </div>
+                <CTA>
+                    <svg
+                        slot="after"
+                        class="w-5"
+                        fill="#191A1A"
+                        viewBox="0 0 256 256">
+                        <path d="M152.27,37.93a8,8,0,0,1,9.8-5.66,86.22,86.22,0,0,1,61.66,61.66,8,8,0,0,1-5.66,9.8A8.23,8.23,0,0,1,216,104a8,8,0,0,1-7.73-5.94,70.35,70.35,0,0,0-50.33-50.33A8,8,0,0,1,152.27,37.93Zm-2.33,41.8c13.79,3.68,22.65,12.54,26.33,26.33A8,8,0,0,0,184,112a8.23,8.23,0,0,0,2.07-.27,8,8,0,0,0,5.66-9.8c-5.12-19.16-18.5-32.54-37.66-37.66a8,8,0,1,0-4.13,15.46Zm81.94,95.35A56.26,56.26,0,0,1,176,224C96.6,224,32,159.4,32,80A56.26,56.26,0,0,1,80.92,24.12a16,16,0,0,1,16.62,9.52l21.12,47.15,0,.12A16,16,0,0,1,117.39,96c-.18.27-.37.52-.57.77L96,121.45c7.49,15.22,23.41,31,38.83,38.51l24.34-20.71a8.12,8.12,0,0,1,.75-.56,16,16,0,0,1,15.17-1.4l.13.06,47.11,21.11A16,16,0,0,1,231.88,175.08Zm-15.88-2s-.07,0-.11,0h0l-47-21.05-24.35,20.71a8.44,8.44,0,0,1-.74.56,16,16,0,0,1-15.75,1.14c-18.73-9.05-37.4-27.58-46.46-46.11a16,16,0,0,1,1-15.7,6.13,6.13,0,0,1,.57-.77L104,87.15l-21-47a.61.61,0,0,1,0-.12A40.2,40.2,0,0,0,48,80,128.14,128.14,0,0,0,176,208,40.21,40.21,0,0,0,216,173.07Z"></path>
+                    </svg>
+                    Je réserve un coaching
+                </CTA>
+            </div>
+
+            <div class="righ grid grid-cols-2 gap-8">
+                <article class="relative coachCard_2 rounded-lg overflow-clip col-span-1">
+                    <img
+                        src="/images/home/helena-coach.jpg"
+                        alt="helena"
+                        width={312}
+                        height={490}
+                        class="object-fit max-h-[490px] rounded-lg shadow-accent-200/90 shadow-md"
+                    />
+                </article>
+                <div class="w-full space-y-8">
+                    <div class="card__description w-full bg-neutral text-dark p-3 gap-2 rounded-xl">
+                        <span class="headline headline-h4 text-dark">Helena d'AUBER</span>
+                        Coach sport santé diplômée d'état
+                    </div>
+                    <article class="coachCard_1 overflow-hidden col-start-4 col-span-3 row-start-2 row-span-3 ">
+                        <img 
+                            src="/images/home/helena-jump.jpg"
+                            alt="helena"
+                            width={320}
+                            height={448}
+                            class="object-cover object-top rounded-lg max-h-96 shadow-accent-200/90 shadow-md"
+                        />
+                    </article>
+                </div>
+            </div>
+        </div>
+        <!-- mobile version -->
+        <div class="w-full gap-6 text-center lg:hidden">
+            <div class="hero-text-wrapper space-y-2 mb-4">
+                <h1 class="tagline text-neutral-900 text-fs-tiny ">Votre coach sportif à Bordeaux</h1>
+                <span class="font-semibold text-fs-h-xlarge">
+                    Faites le plein d'énergie!
+                </span>
+            </div>
+            <CTA>
+                <svg
+                    slot="after"
+                    class="w-5"
+                    fill="#191A1A"
+                    viewBox="0 0 256 256">
+                    <path d="M152.27,37.93a8,8,0,0,1,9.8-5.66,86.22,86.22,0,0,1,61.66,61.66,8,8,0,0,1-5.66,9.8A8.23,8.23,0,0,1,216,104a8,8,0,0,1-7.73-5.94,70.35,70.35,0,0,0-50.33-50.33A8,8,0,0,1,152.27,37.93Zm-2.33,41.8c13.79,3.68,22.65,12.54,26.33,26.33A8,8,0,0,0,184,112a8.23,8.23,0,0,0,2.07-.27,8,8,0,0,0,5.66-9.8c-5.12-19.16-18.5-32.54-37.66-37.66a8,8,0,1,0-4.13,15.46Zm81.94,95.35A56.26,56.26,0,0,1,176,224C96.6,224,32,159.4,32,80A56.26,56.26,0,0,1,80.92,24.12a16,16,0,0,1,16.62,9.52l21.12,47.15,0,.12A16,16,0,0,1,117.39,96c-.18.27-.37.52-.57.77L96,121.45c7.49,15.22,23.41,31,38.83,38.51l24.34-20.71a8.12,8.12,0,0,1,.75-.56,16,16,0,0,1,15.17-1.4l.13.06,47.11,21.11A16,16,0,0,1,231.88,175.08Zm-15.88-2s-.07,0-.11,0h0l-47-21.05-24.35,20.71a8.44,8.44,0,0,1-.74.56,16,16,0,0,1-15.75,1.14c-18.73-9.05-37.4-27.58-46.46-46.11a16,16,0,0,1,1-15.7,6.13,6.13,0,0,1,.57-.77L104,87.15l-21-47a.61.61,0,0,1,0-.12A40.2,40.2,0,0,0,48,80,128.14,128.14,0,0,0,176,208,40.21,40.21,0,0,0,216,173.07Z"></path>
+                </svg>
+                Je réserve un coaching
+            </CTA>
+
+            <div class="w-full flex flex-col items-center mt-4 space-y-2 text-left ">
+                <article class="relative rounded-lg overflow-hidden">
+                    <img 
+                        src="/images/home/helena-coach.jpg"
+                        alt="helena"
+                        width={384}
+                        height={320}
+                        class="object-cover object-top max-h-96 rounded-xl"
+                    />
+                    <div class="legende absolute bottom-0 left-0 p-4 text-neutral-0">
+                        <p class="font-medium text-fs-small">Helena d'AUBER</p>
+                        <p class="text-fs-small">Coach sport santé diplômée d'état</p>
+                    </div>
+                </article>
+                 <p class="text-fs-base">Retrouvez la forme, dessinez vos muscles, garder la ligne. Grâce à un programme sur-mesure de coaching sportif à domicile.</p>
+            </div>
+            
+        </div>
+    </div>
+</header>
