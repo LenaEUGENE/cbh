@@ -5,10 +5,10 @@ import { Image } from 'astro:assets';
 import CTA from './CTA.astro';
 ---
 
-<header class="section py-12 md:py-16 lg:py-20 xl:py-24">
+<div class="section py-8 md:py-16 lg:py-20 xl:py-24">
     <div class="inner-section w-[90%] max-w-[84rem] mx-auto">
         <!-- Announcement Banner -->
-        <div class="banner-wrapper flex justify-center items-center mb-8 xl:mb-14">
+        <div class="banner-wrapper hidden md:flex md:justify-center md:items-center md:mb-8 xl:mb-14">
             <a class="group flex justify-center items-center bg-brand-100 hover:bg-brand-200 border border-neutral-900 p-1 pl-4 rounded-full shadow-md" href="https://www.cesu.urssaf.fr/info/accueil/beneficier-d-avantages/lavantage-fiscal/a-quel-avantage-fiscal-puis-je-p.html">
                 <div class=" text-neutral-700 text-fs-tiny text-center">
                     <p class="mr-2 inline-block">
@@ -108,7 +108,23 @@ import CTA from './CTA.astro';
                 </article>
                  <p class="text-fs-base">Retrouvez la forme, dessinez vos muscles, garder la ligne. Grâce à un programme sur-mesure de coaching sportif à domicile.</p>
             </div>
-            
+            <!-- Mobile Announcement Banner -->
+            <div class="mt-6 banner-wrapper flex justify-center items-center mb-8 xl:mb-14">
+                <a class="group flex justify-center items-center bg-brand-100 hover:bg-brand-200 border border-neutral-900 p-1 pl-4 rounded-full shadow-md" href="https://www.cesu.urssaf.fr/info/accueil/beneficier-d-avantages/lavantage-fiscal/a-quel-avantage-fiscal-puis-je-p.html">
+                    <div class=" text-neutral-700 text-fs-tiny text-center">
+                        <p class="mr-2 inline-block">
+                        Possibilité de paiement par CESU
+                        </p>
+                        <p>Réduction d'impôts à hauteur de 50%</p>
+                    </div>
+                    <svg 
+                        class="icon icon-tabler icon-tabler-arrow-up-right" width="32" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#191A1A" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M17 7l-10 10" />
+                        <path d="M8 7l9 0l0 9" />
+                    </svg>
+                </a>
+            </div>
         </div>
     </div>
-</header>
+</div>
