@@ -1,8 +1,8 @@
 ---
 import "../styles/global.css";
-import Seo from "../components/Seo.astro";
+import { SEO } from "astro-seo";
 
-const { title,description, image, frontmatter, robots } = Astro.props;
+const { title, description, image, frontmatter, robots } = Astro.props;
 
 //import components
 import Header from '../components/Header.astro';
@@ -12,18 +12,22 @@ import Footer from '../components/Footer.astro';
 <html lang="fr">
     <head>
         <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>Astro</title>
-        <Seo
-			{title}
-			{description}
-			url={Astro.url}
-			{image}
-			{frontmatter}
-			{robots}
-		/>
+        <title>Coaching by Helena</title>
+
+        <SEO
+        title="Coaching by Helena - Votre coach sportif à Bordeaux"
+        description="Je vous accompagne dans vos objectifs de forme : perte de poids, renforcement musculaire, AMAP et autres."
+        openGraph={{
+            basic: {
+            title: "Coaching by Helena",
+            type: "A type.",
+            image: "https://github.com/LenaEUGENE/cbh/blob/main/public/images/home/helena-coach.jpg?raw=true",
+        }
+      }}
+    />
     </head>
     <body class="bg-accent-20">
         <Header/>
