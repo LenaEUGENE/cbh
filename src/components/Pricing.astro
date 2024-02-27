@@ -317,9 +317,12 @@ const groupe = await getCollection("pricing", ({ id }) => {
                 </div>
             </div>
             <div class="flex flex-col justify-center">
-                <img
+                <Image
                     src="/images/planning.svg"
-                    alt="image du planning hebdomadaire"
+                    alt="planning hebdomadaire"
+                    loading=lazy
+                    width={1024}
+                    height={512}
                     class="w-full rounded-xl object-cover max-h-52 lg:max-h-fit"
                 />
             </div>

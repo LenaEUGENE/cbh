@@ -36,10 +36,12 @@ const coachings = await getCollection("coachings", ({ data }) => {
                     coachings.map((coachings) => (
                         <li>
                             <article class="coaching-card flex-initial h-full rounded-lg overflow-hidden shadow-sm shadow-accent-50 bg-neutral-0">
-                                <img
+                                <Image
                                     class="coaching-card__img object-cover object-center h-64 shadow-accent-20 shadow-md"
                                     width={640}
                                     height={256}
+                                    loading="lazy"
+                                    format="webp"
                                     src={coachings.data.img}
                                     alt={coachings.data.img_alt}
                                 />
