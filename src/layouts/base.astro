@@ -29,11 +29,19 @@ import Footer from '../components/Footer.astro';
       }}
     />
     </head>
-    <body class="bg-accent-20">
+    <body class="relative bg-accent-20">
         <Header/>
-        <main>
+        <main class="mt-8">
            <slot/>
         </main>
         <Footer />
     </body>
 </html>
+
+
+<style is:global>
+    /***** Global css *****/
+
+
+
+</style>

@@ -129,8 +129,6 @@ select {
   src: url("/fonts/urbanist-VariableFont_slnt,wght.ttf");
 }
 
-/***** Global css *****/
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -139,6 +137,7 @@ select {
   body {
     @apply bg-accent-50;
   }
+
   p {
     @apply text-neutral-700 text-fs-base leading-normal;
   }
@@ -149,10 +148,10 @@ select {
   .section {
     @apply place-items-center w-full mx-auto py-8 md:py-16 lg:py-20 xl:py-24
   }
-  
+
   .inner-section {
     @apply place-items-center w-[90%] max-w-[84rem] mx-auto;
-    
+
   }
 
   .headline {
@@ -160,7 +159,7 @@ select {
   }
 
   .headline-h1 {
-    @apply text-fs-huge leading-tight mb-8;
+    @apply text-fs-h-xlarge leading-tight mb-8;
   }
 
   .headline-h2 {
@@ -181,8 +180,9 @@ select {
 
   .subtitle {
     @apply text-fs-base font-normal text-neutral-700;
-    
+
   }
+
   .checklist-item {
     @apply text-fs-small sm:text-fs-base;
   }
@@ -193,11 +193,10 @@ select {
 
   @layer utilities {
     .bg-gradient {
-      @apply bg-gradient-to-r from-neutral-0 to-accent-500;
+      @apply bg-gradient-to-r from-neutral-0 to-accent-400;
     }
   }
 }
-
 
 /***** All animations ****/
 
