@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+//import collections
+import { getCollection } from "astro:content";
+import Link from "../components/Link.astro";
+
+// Fetching collections
+const coachings = await getCollection("coachings", ({ data }) => {
+    return data;
+});
+---
+
+<!-- coachings -->
+<section id="coachings" class="section w-full py-8 md:py-16 lg:py-20 xl:py-24">
+    <div class="inner-section w-[90%] max-w-[84rem] mx-auto">
+        <div
+            class="sectionTitle w-full mx-auto space-y-4 text-center lg:text-left pb-8 md:pb-12 lg:pb-16">
+            <div class="groupTitle space-y-1 mb-4">
+                <h2 class="headline text-fs-h-xlarge font-semibold text-neutral-900">
+                    Les bienfaits du coaching privé
+                </h2>
+            </div>
+            <p class="max-w-prose text-neutral-900">
+                Un bien-être physique et mental au quotidien qui vous permet
+                d’être, enfin, vous-même.
+            </p>
+        </div>
+        <div class="grid-wrapper w-full grid justify-center">
+            <ul
+                id="grid-coachings"
+                class="w-full grid gap-6 lg:gap-8 mx-auto md:grid-cols-2 xl:grid-cols-3"
+            >
+                {
+                    coachings.map((coachings) => (
+                        <li>
+                            <article class="coaching-card flex-initial h-full rounded-lg overflow-hidden shadow-sm shadow-accent-50 bg-neutral-0">
+                                <Image
+                                    class="coaching-card__img object-cover object-center h-64 shadow-accent-20 shadow-md"
+                                    width={640}
+                                    height={256}
+                                    src={coachings.data.img}
+                                    alt={coachings.data.img_alt}
+                                />
+                                <div class="text-neutral-900 flex flex-col px-6 pb-6 h-full max-h-96 xl:mt-6 2xl:mt-8">
+                                    <h3 class="coaching-card__heading text-fs-h-small font-medium">
+                                        {" "}
+                                        {coachings.data.titre}{" "}
+                                    </h3>
+                                    <div class="coachin-card__content">
+                                        <p class="mt-2.5 mb-3 font-normal text-neutral-700">
+                                            {coachings.data.description}
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </div>
+</section>
