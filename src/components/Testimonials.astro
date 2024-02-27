@@ -1,0 +1,86 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+
+//import collections
+import { getCollection } from 'astro:content';
+import Link from '../components/Link.astro';
+
+//Fetch collections
+
+const testimonialsSample = await getCollection('testimonials', ({ data }) => {
+  return data.preview === true;
+});
+
+---
+<!-- testimonials -->
+    <section id="testimonials-sample" class="section">
+        <div class="inner-section">
+            <div class="grid lg:gap-6 lg:grid-cols-3">
+                <div class="sectionTitle items-start  w-full mx-auto lg:col-span-1 space-y-4 text-center lg:text-left">
+                    <div class="groupTitle">
+                        <h2 class="headline headline-h2">La rumeur court</h2>
+                        <p class="subtitle">Mes clients vous disent ce qu'ils en pensent.</p>
+                    </div>
+                   <a href="/helena/#testimonials" class="group underline underline-offset-2 link-wrapper w-full mx-auto flex items-center gap-2">
+                        <p class="group-hover:text-brand-400">Voir tous les témoignages</p>
+                        <Icon name="arrow-right" size={32} class="group-hover:text-brand-400" />
+                   </a>
+                </div>
+                <div class="testimonials-wrapper w-full flex justify-center lg:col-span-2">
+                    <ul id="grid-testimonials-sample" class="w-full space-y-8 md:space-x-8 md:flex mx-auto">
+                        {
+                            testimonialsSample.map((testimonials) => (
+                                <li class="w-full mx-auto">
+                                    <article class="testimonial-card w-full md:max-w-sm min-h-fit bg-neutral-0 rounded-xl overflow-hidden p-6 text-neutral-700 shadow-neutral-50 shadow-md">
+                                        <div class="relative testimony-wrapper">
+                                            <figure class="grid gap-6">
+                                                <blockquote class="testimony testimony-extract line-clamp-5 lg:line-clamp-4 text-fs-base italic text-neutral-700">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="48"
+                                                        height="48" 
+                                                        fill="#FF8CA3"
+                                                        viewBox="0 0 256 256"
+                                                        class="text-accent-400 mb-4"
+                                                        >
+                                                        <path d="M108,72v72H40a8,8,0,0,1-8-8V72a8,8,0,0,1,8-8h60A8,8,0,0,1,108,72Zm108-8H156a8,8,0,0,0-8,8v64a8,8,0,0,0,8,8h68V72A8,8,0,0,0,216,64Z" opacity="0.2"></path>
+                                                        <path d="M100,56H40A16,16,0,0,0,24,72v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,100,56Zm0,80H40V72h60ZM216,56H156a16,16,0,0,0-16,16v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,216,56Zm0,80H156V72h60Z"></path>
+                                                        
+                                                    </svg>
+
+                                                    {testimonials.data.témoignage}
+                                                </blockquote>
+                                                <figcaption class="text-neutral-700 bg-brand-100 -mx-6 -mb-6">
+                                                    <div class="-mx-2 flex items-center p-6">
+                                                        <div class="testimonial-image-wrapper rounded-full">
+                                                            <Image
+                                                                class="mx-2 object-cover object-center h-12 w-12 shrink-0 rounded-full bg-neutral-0 ring-accent-50 ring-4"
+                                                                width={128}
+                                                                height={128}
+                                                                src={testimonials.data.img}
+                                                                alt={testimonials.data.img_alt}
+                                                            />  
+                                                        </div>
+
+                                                        <div class="mx-2">
+                                                            <p class="text-fs-base font-medium text-neutral-700">
+                                                                {testimonials.data.auteur}<span> - {testimonials.data.âge}</span>
+                                                            </p>
+                                                            <p class="text-neutral-700 text-fs-small">
+                                                                {testimonials.data.job}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    </article>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>

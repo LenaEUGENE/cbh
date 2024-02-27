@@ -8,7 +8,7 @@ module.exports =  {
 			"neutral-900":"#191A1A",
 			"neutral-700":"#484A4C",
 			"neutral-0":"#FFFFFF",
-			"brand-100":"#A3CCF5",
+			"brand-100":"#E8F2FC",
 			"brand-400":"#4799EB",
 			"brand-500":"#197FE6",
 			"accent-20":"#FFF5F7",
