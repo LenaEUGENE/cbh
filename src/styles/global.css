@@ -147,15 +147,12 @@ select {
 @layer components {
 
   .section {
-    @apply place-items-center w-full mx-auto;
-    padding-block: clamp(3.5rem, 5%, 7rem);
+    @apply place-items-center w-full mx-auto py-8 md:py-16 lg:py-20 xl:py-24
   }
   
-  .container{
-    @apply place-items-center w-full mx-auto;
-    margin: 0 auto;
-    width: (max(95vw, 1344px, 85rem));
-    padding-inline: clamp(1rem, 5%, 5rem);
+  .inner-section {
+    @apply place-items-center w-[90%] max-w-[84rem] mx-auto;
+    
   }
 
   .headline {
