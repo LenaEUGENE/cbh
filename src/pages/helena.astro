@@ -1,0 +1,139 @@
+---
+import Layout from '../layouts/base.astro';
+import { Icon } from 'astro-icon/components';
+
+//import components
+import CTA from '../components/CTA.astro';
+import Credentials from '../components/Credentials.astro';
+
+//credentials
+
+//import collections
+import { getCollection } from 'astro:content';
+
+const testimonials = await getCollection('testimonials', ({ data }) => {
+  return data;
+});
+const gallery = await getCollection("gallery");
+
+---
+
+<Layout title="Je me présente">
+		<!-- Hero -->
+		<section class="section fade-in animate-up">
+			<div class="inner-section">
+                <span class="tagline text-accent-400">En savoir plus sur Coaching by Helena</span>
+				<!-- grid -->		
+				<div class="grid gap-10 lg:gap-12 xl:gap-14 md:grid-cols-2">
+                    <div class="top">
+                        <h1 class="headline headline-h2 max-w-lg">Coaching by Helena se propose de vous accompagner dans vos objectifs de forme.</h1>
+                    </div>
+                    <div class="bottom">
+                        <p>
+                            J'offre aux personnes désireuses de faire le plein d'énergie, la mise en place d'un programme d'exercices physiques sur-mesure, ainsi que le suivi de leurs progrès.
+                        </p>
+                    </div>
+				</div>
+				<!-- end grid -->
+			</div>
+		<section/>
+
+        <!-- credentials -->
+        <Credentials />
+		
+        <!-- testimonials -->
+        <div id="testimonials" class="section">
+            <div class="inner-section">
+                <div class="sectionTitle w-full mx-auto max-w-prose space-y-4 text-center pb-8 md:pb-12 lg:pb-16">
+					<div class="groupTitle space-y-1">
+						<span class="tagline">Des personnes motivées et satisfaites</span>
+						<h2 class="headline headline-h2">Ce sont mes clients qui en parlent le mieux.                       </h2>
+					</div>
+					
+				</div>
+                <ul class="carousel grid gap-8 md:grid-cols-2">
+            {
+                            testimonials.map((testimonials) => (
+                                <li>
+                                    <article class="testimonial-card min-h-fit bg-neutral-0 rounded-xl overflow-hidden p-6 text-neutral-700 shadow-neutral-50 shadow-lg">
+                                        <div class="relative testimony-wrapper">
+                                            <figure class="grid gap-6">
+                                                <blockquote class="testimony testimony-extract text-fs-base italic text-neutral-700 line-clamp-[8]">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="48"
+                                                        height="48" 
+                                                        fill="#FF8CA3"
+                                                        viewBox="0 0 256 256"
+                                                        class="text-accent-400 mb-4"
+                                                        >
+                                                        <path d="M108,72v72H40a8,8,0,0,1-8-8V72a8,8,0,0,1,8-8h60A8,8,0,0,1,108,72Zm108-8H156a8,8,0,0,0-8,8v64a8,8,0,0,0,8,8h68V72A8,8,0,0,0,216,64Z" opacity="0.2"></path>
+                                                        <path d="M100,56H40A16,16,0,0,0,24,72v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,100,56Zm0,80H40V72h60ZM216,56H156a16,16,0,0,0-16,16v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,216,56Zm0,80H156V72h60Z"></path>
+                                                        
+                                                    </svg>
+
+                                                    {testimonials.data.témoignage}
+                                                </blockquote>
+                                                <figcaption class="text-neutral-500 bg-brand-100 -mx-6 -mb-6">
+                                                    <div class="-mx-2 flex items-center p-6">
+                                                        <div class="testimonial-image-wrapper rounded-full">
+                                                            <img
+                                                                class="mx-2 object-cover object-center h-12 w-12 shrink-0 rounded-full bg-neutral-0 ring-accent-200 ring-4"
+                                                                width={128}
+                                                                height={128}
+                                                                src={testimonials.data.img}
+                                                                alt={testimonials.data.img_alt}
+                                                            />  
+                                                        </div>
+
+                                                        <div class="mx-2">
+                                                            <p class="text-fs-base font-medium text-neutral-700">
+                                                                {testimonials.data.auteur}<span> - {testimonials.data.âge}</span>
+                                                            </p>
+                                                            <p class="text-neutral-500 text-fs-small">
+                                                                {testimonials.data.job}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    </article>
+                                </li>
+                            ))
+                        }
+                  </ul>
+            </div>
+        </div>
+
+        <!-- Section gallery photos -->
+        <section id="gallery" class="section bg-neutral-900">
+            <div class="inner-section">
+                <div class="sectionTitle w-full mx-auto max-w-prose space-y-4 text-center pb-8 md:pb-12 lg:pb-16">
+                    <div class="groupTitle space-y-1">
+                        <span class="tagline text-neutral-0">Le mouvement c'est la vie!</span>
+                        <h2 class="headline headline-h2 text-neutral-0">Le coaching by Helena en images</h2>
+                    </div>
+                </div>
+            <ul
+                class="mx-auto w-full max-w-6xl columns-2 items-start space-y-6 gap-6 overflow-x-auto md:columns-3 md:space-y-8 md:gap-8 pt-8 md:pt-12 lg:pt-14"
+            >
+            {
+                gallery.map((gallery) => (
+                <article class="mb-4 rounded-lg overflow-clip">
+                    <div class="flex items-center">
+                        <img
+                            class="object-cover w-full "
+                            src={gallery.data.img}
+                            alt={gallery.data.alt_img}
+                        />
+                    </div>
+                </article>
+                ))
+            }
+            </ul>
+            </div>
+        </section>
+
+	</Main>
+</Layout>
