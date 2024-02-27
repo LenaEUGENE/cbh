@@ -1,0 +1,94 @@
+---
+import Layout from "../layouts/base.astro";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+//import components
+import Link from "../components/Link.astro";
+---
+
+<Layout title="Mentions légales">
+    <section id="mentions-légales" class="section bg-offwhite">
+        <div class="container mt-14">
+            <div
+                class="sectionTitle w-full mx-auto max-w-prose space-y-4 text-center"
+            >
+                <div class="groupTitle space-y-1 mb-4">
+                    <h1 class="headline headline-h2">Mentions Légales</h1>
+                </div>
+            </div>
+            <div
+                class="grid-wrapper w-full grid justify-center mt-14 space-y-6"
+            >
+                <article
+                    class="group-title flex flex-col justify-center text-center lg:text-left"
+                >
+                    <h2 class="mention headline headline-h3">1. Objet</h2>
+                    <p class="mention-details text-fs-base">
+                        Les présentes conditions générales d'utilisation
+                        "CGU" ont pour objet l'encadrement juridique des
+                        modalités de mise à disposition des services du site
+                        "www.cochingbyhelena.com" et leur utilisation par
+                        "l'Utilisateur". Les conditions générales
+                        d'utilisation doivent être acceptées par tout
+                        Utilisateur souhaitant accéder au site. Elles
+                        constituent le contrat entre le site et
+                        l'Utilisateur. L’accès au site par l’Utilisateur
+                        signifie son acceptation des présentes conditions
+                        générales d’utilisation.
+                    </p>
+                </article>
+            </div>
+            <article
+                class="group-title flex flex-col justify-center text-center lg:text-left"
+            >
+                <h2 class="mention headline headline-h3">
+                    2. Mentions légales
+                </h2>
+                <p class="mb-2">
+                    L'édition du site "coachingbyhelena.com" est assurée par
+                    Helena d'AUBER de PEYRELONGUE EI dont le siège social
+                    est situé au 63 rue de Vincennes 33000 BORDEAUX. <br /> Le
+                    Directeur de la publication est Helena d'AUBER de PEYRELONGUE.
+                </p>
+                <ul>
+                    <li class="list-disc">Téléphone : 06 83 23 64 07</li>
+                    <li class="list-disc">
+                        Email : bonjour@.coachingbyhelena.com
+                    </li>
+                    <li class="list-disc">SIRET 90116152100017</li>
+                    <li class="list-disc">
+                        Numéro d'identification à la TVA : FR00901161521
+                    </li>
+                    <li class="list-disc">
+                        Code NAF(APE) : Enseignement de disciplines
+                        sportives et d'activités de loisirs (8551Z)
+                    </li>
+                </ul>
+                <p class="mt-2">
+                    Ce site est hébergé par la société Vercel Inc., située
+                    340 S Lemon Ave #4133 Walnut, CA 91789, et joignable au
+                    (559) 288-7060.
+                </p>
+            </article>
+            <article
+                class="group-title flex flex-col justify-center text-center lg:text-left"
+            >
+                <h2 class="mention headline headline-h3">
+                    3. Propriété intellectuelle
+                </h2>
+                <p class="mention-details text-fs-base">
+                    Les marques, logos, signes et tout autre contenu du site
+                    font l'objet d'une protection par le Code de la
+                    propriété intellectuelle et plus particulièrement par le
+                    droit d'auteur. L'Utilisateur sollicite l'autorisation
+                    préalable du site pour toute reproduction, publication,
+                    copie des différents contenus. L'Utilisateur s'engage à
+                    une utilisation des contenus du site dans un cadre
+                    strictement privé. Une utilisation des contenus à des
+                    fins commerciales est strictement interdite.
+                </p>
+            </article>
+        </div>
+    </section>
+</Layout>
