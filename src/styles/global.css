@@ -158,26 +158,27 @@ select {
     padding-inline: clamp(1rem, 5%, 5rem);
   }
 
-  .headline{
+  .headline {
     @apply block font-semibold text-neutral-900 tracking-wide;
   }
 
-  .headline-h1{
+  .headline-h1 {
     @apply text-fs-huge leading-tight mb-8;
   }
-  .headline-h2{
-    @apply text-fs-h-large;
+
+  .headline-h2 {
+    @apply text-fs-h-large leading-tight;
   }
 
-  .headline-h3{
-    @apply text-fs-h-medium;
+  .headline-h3 {
+    @apply text-fs-h-medium leading-tight;
   }
 
-  .headline-h4{
-    @apply text-fs-h-small;
+  .headline-h4 {
+    @apply text-fs-h-small leading-tight;
   }
 
-  .tagline{
+  .tagline {
     @apply text-fs-tiny font-medium text-neutral-900 uppercase;
   }
 
@@ -185,7 +186,7 @@ select {
     @apply text-fs-base font-normal text-neutral-700;
     
   }
-  .checklist-item{
+  .checklist-item {
     @apply text-fs-small sm:text-fs-base;
   }
 
