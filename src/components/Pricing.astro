@@ -1,0 +1,338 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+//import collections
+import { getCollection } from "astro:content";
+
+const pricing = await getCollection("pricing");
+const solo = await getCollection("pricing", ({ id }) => {
+    return id.startsWith("solo/");
+});
+
+const duo = await getCollection("pricing", ({ id }) => {
+    return id.startsWith("duo/");
+});
+
+const groupe = await getCollection("pricing", ({ id }) => {
+    return id.startsWith("groupe/");
+});
+---
+
+<!-- pricing -->
+<section id="tarifs" class="section bg-accent-50 w-full py-8 md:py-16 lg:py-20 xl:py-24">
+    <div class="inner-section w-[90%] max-w-[84rem] mx-auto">
+        <div
+            class="sectionTitle w-full mx-auto space-y-4 text-center lg:text-left"
+        >
+            <div class="groupTitle space-y-4 w-full">
+                <h2 class="headline headline-h2 text-fs-h-xlarge">
+                    Tarifs simples adaptés <br /> aux besoins de chacun
+                </h2>
+                <div
+                    class="w-full flex flex-col justify-center space-y-6 lg:flex-row md:space-y-0 lg:justify-between md:align-bottom"
+                >
+                    <p class="sub__headline text-fs-base">
+                        Tous les abonnements bénéficient d'un bilan physique
+                    </p>
+                    <!-- Tab Nav -->
+                    <nav
+                        class="mx-auto flex justify-center gap-4"
+                        aria-label="Tabs"
+                        role="tablist"
+                    >
+                        <button
+                            type="button"
+                            class="hs-tab-active:bg-brand-400 hs-tab-active:hover:border-brand-400 text-center md:text-left group hover:bg-brand-400 px-3 py-2 rounded-xl active"
+                            id="tabs-with-card-item-1"
+                            data-hs-tab="#tabs-with-card-1"
+                            aria-controls="tabs-with-card-1"
+                            role="tab"
+                        >
+                            <span
+                                class="flex flex-col justify-center items-center"
+                            >
+                                <div class="w-full flex items-center gap-1">
+                                    <Icon
+                                        name="user"
+                                        class="hs-tab-active:text-neutral-0 text-brand-400 w-4 group-hover:text-neutral-0"
+                                    />
+                                    <span
+                                        class="hs-tab-active:text-neutral-0 block font-regular text-brand-400 text-fs-small font-medium group-hover:text-neutral-0"
+                                        >Solo</span
+                                    >
+                                </div>
+                            </span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="hs-tab-active:bg-brand-400 hs-tab-active:hover:border-brand-400 text-center md:text-left group hover:bg-brand-400 px-3 py-2 rounded-xl"
+                            id="tabs-with-card-item-2"
+                            data-hs-tab="#tabs-with-card-2"
+                            aria-controls="tabs-with-card-1"
+                            role="tab"
+                        >
+                            <span
+                                class="flex flex-col justify-center items-center"
+                            >
+                                <div class="w-full flex items-center gap-1">
+                                    <Icon
+                                        name="users"
+                                        class="hs-tab-active:text-neutral-0 text-brand-400 w-4 group-hover:text-neutral-0"
+                                    />
+                                    <span
+                                        class="hs-tab-active:text-neutral-0 block font-regular text-brand-400 text-fs-small font-medium group-hover:text-neutral-0"
+                                        >Duo</span
+                                    >
+                                </div>
+                            </span>
+                        </button>
+                        <button
+                            type="button"
+                            class="hs-tab-active:bg-brand-400 hs-tab-active:hover:border-brand-400 text-center md:text-left group hover:bg-brand-400 px-3 py-2 rounded-xl"
+                            id="tabs-with-card-item-3"
+                            data-hs-tab="#tabs-with-card-3"
+                            aria-controls="tabs-with-card-1"
+                            role="tab"
+                        >
+                            <span
+                                class="flex flex-col justify-center items-center"
+                            >
+                                <div class="w-full flex items-center gap-1">
+                                    <Icon
+                                        name="users-four"
+                                        class="hs-tab-active:text-neutral-0 text-brand-400 w-4 group-hover:text-neutral-0"
+                                    />
+                                    <span
+                                        class="hs-tab-active:text-neutral-0 block font-regular text-brand-400 text-fs-small font-medium group-hover:text-neutral-0"
+                                        >Groupe</span
+                                    >
+                                </div>
+                            </span>
+                        </button>
+                    </nav>
+                    <!-- End Tab Nav -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="w-full mx-auto">
+            <!-- Tab Content -->
+            <div class="w-full mt-12 md:mt-16">
+                <div
+                    id="tabs-with-card-1"
+                    role="tabpanel"
+                    aria-labelledby="tabs-with-card-item-1"
+                    class="w-full"
+                >
+                    <ul
+                        id="grid-pricing"
+                        class="w-full grid gap-6 lg:gap-8 mx-auto md:grid-cols-2 xl:grid-cols-3"
+                    >
+                        {
+                            solo.map((pricing) => (
+                                <li>
+                                    <article class="relative p-6 h-full flex flex-col rounded-lg overflow-hidden shadow-sm shadow-accent-50 bg-neutral-0">
+                                        <div class="title--wrapper flex justify-between items-center">
+                                            <h3 class="text-fs-base text-brand-400">
+                                                {pricing.data.type}
+                                            </h3>
+                                            <p class="text-fs-base text-brand-400">
+                                                {pricing.data.catégorie}
+                                            </p>
+                                        </div>
+                                        
+                                        <div class="pricing-card--content flex-1 space-y-6 mt-6">
+                                            <div class="price--wrapper">
+                                                <p class="flex items-center">
+                                                    <span class="text-fs-2xl font-semibold">
+                                                        {pricing.data.tarif}
+                                                    </span>
+                                                    <span class="ml-1.5 text-fs-small">
+                                                        /{" "}
+                                                        {pricing.data.fréquence}
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <p class="mt-4 leading-6 flex-1 text-fs-medium font-medium">
+                                                {pricing.data.rythme}
+                                            </p>
+                                            <p class="mt-4 leading-6 flex-1">
+                                                {pricing.data.description}
+                                            </p>
+                                        </div>
+
+                                        <ul class=" mt-6 coaching--features space-y-4">
+                                            <li class="leading-6 flex space-x-2 items-center">
+                                                <Icon name="check-circle" size={24} class="text-accent-400 mb-3"/>
+                                                <span class="text-lg font-medium">
+                                                    {pricing.data.engagement}
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </article>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+
+                <div
+                    id="tabs-with-card-2"
+                    class="hidden"
+                    role="tabpanel"
+                    aria-labelledby="tabs-with-card-item-2"
+                >
+                    <ul
+                        id="grid-pricing"
+                        class="w-full grid gap-6 lg:gap-8 mx-auto md:grid-cols-2 xl:grid-cols-3"
+                    >
+                        {
+                            duo.map((pricing) => (
+                                <li>
+                                    <article class="relative p-6 h-full flex flex-col max-w-sm rounded-xl bg-neutral-0 shadow-neutral-50 shadow-lg">
+                                        <div class="title--wrapper flex justify-between items-center">
+                                            <h3 class="text-fs-base text-brand-400">
+                                                {pricing.data.type}
+                                            </h3>
+                                            <p class="text-fs-base text-brand-400">
+                                                {pricing.data.catégorie}
+                                            </p>
+                                        </div>
+                                        
+                                        <div class="pricing-card--content flex-1 space-y-6 mt-6">
+                                            <div class="price--wrapper">
+                                                <p class="flex items-center">
+                                                    <span class="text-fs-2xl font-semibold">
+                                                        {pricing.data.tarif}
+                                                    </span>
+                                                    <span class="ml-1.5 text-fs-small">
+                                                        /{" "}
+                                                        {pricing.data.fréquence}
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <p class="mt-4 leading-6 flex-1 text-fs-medium font-medium">
+                                                {pricing.data.rythme}
+                                            </p>
+                                            <p class="mt-4 leading-6 flex-1">
+                                                {pricing.data.description}
+                                            </p>
+                                        </div>
+
+                                        <ul class=" mt-6 coaching--features space-y-4">
+                                            <li class="leading-6 flex space-x-2 items-center">
+                                                <Icon name="check-circle" size={24} class="text-accent-400 mb-3"/>
+                                                <span class="text-lg font-medium">
+                                                    {pricing.data.engagement}
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </article>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+
+                <div
+                    id="tabs-with-card-3"
+                    class="hidden"
+                    role="tabpanel"
+                    aria-labelledby="tabs-with-card-item-3"
+                >
+                    <ul
+                        id="grid-pricing"
+                        class="w-full grid gap-6 lg:gap-8 mx-auto md:grid-cols-2 xl:grid-cols-3"
+                    >
+                        {
+                            groupe.map((pricing) => (
+                                <li>
+                                    <article class="relative p-6 h-full flex flex-col max-w-sm rounded-xl bg-neutral-0 shadow-neutral-50 shadow-lg">
+                                        <div class="title--wrapper flex justify-between items-center">
+                                            <h3 class="text-fs-base text-brand-400">
+                                                {pricing.data.type}
+                                            </h3>
+                                            <p class="text-fs-base text-brand-400">
+                                                {pricing.data.catégorie}
+                                            </p>
+                                        </div>
+                                        
+                                        <div class="pricing-card--content flex-1 space-y-6 mt-6">
+                                            <div class="price--wrapper">
+                                                <p class="flex items-center">
+                                                    <span class="text-fs-2xl font-semibold">
+                                                        {pricing.data.tarif}
+                                                    </span>
+                                                    <span class="ml-1.5 text-fs-small">
+                                                        /{" "}
+                                                        {pricing.data.fréquence}
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <p class="mt-4 leading-6 flex-1 text-fs-medium font-medium">
+                                                {pricing.data.rythme}
+                                            </p>
+                                            <p class="mt-4 leading-6 flex-1">
+                                                {pricing.data.description}
+                                            </p>
+                                        </div>
+
+                                        <ul class=" mt-6 coaching--features space-y-4">
+                                            <li class="leading-6 flex space-x-2 items-center">
+                                                <Icon name="check-circle" size={24} class="text-accent-400 mb-3"/>
+                                                <span class="text-lg font-medium">
+                                                    {pricing.data.engagement}
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </article>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+            <!-- End Tab Content -->
+        </div>
+
+        <div class="group-class space-y-8 mt-14">
+            <!-- Group classes -->
+            <div
+                class="sectionTitle w-full mx-auto text-center lg:text-left"
+            >
+                <div
+                    class="sectionTitle w-full mx-auto text-center lg:text-left"
+                >
+                    <div class="groupTitle space-y-2 w-full">
+                        <h3 class="headline text-fs-h-small font-medium">
+                            Horaires et tarifs des cours collectifs
+                        </h3>
+                        <p class="sub__headline text-fs-base">
+                            Profiter de l'émulation d'un petit groupe.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col justify-center">
+                <img
+                    src="/images/planning.svg"
+                    alt="image du planning hebdomadaire"
+                    class="w-full rounded-xl object-cover max-h-52 lg:max-h-fit"
+                />
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .checklist-item {
+        @apply text-fs-small sm:text-fs-base;
+    }
+</style>
+
+<script>
+    import "preline/dist/preline.js";
+</script>
