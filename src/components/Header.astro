@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 
 ---
 
@@ -11,11 +12,12 @@
                     aria-label="lien vers la page d'accueil"
                     class="flex-none"
                 >
-                    <img
+                    <Image
                         src="/images/logo-brand.svg"
                         alt="logo - Coaching by Helena" 
                         width={256}
                         height={128}
+                        loading=eager
                         class="logo__img bg-cover max-h-16 max-w-[160px] md:h-full md:max-h-[224px]">
                 </a>
             </div>

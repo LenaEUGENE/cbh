@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 
 //import components
 import CTA from './CTA.astro';
+import { lazy } from 'astro/zod';
 ---
 
 <div class="section py-8 md:py-16 lg:py-20 xl:py-24">
@@ -47,11 +48,13 @@ import CTA from './CTA.astro';
 
             <div class="righ grid grid-cols-2 gap-8">
                 <article class="relative coachCard_2 rounded-lg overflow-clip col-span-1">
-                    <img
+                    <Image
                         src="/images/home/helena-coach.jpg"
-                        alt="helena"
+                        alt="helena d'AUBER"
                         width={312}
                         height={490}
+                        loading=eager
+                        format='webp'
                         class="object-fit max-h-[490px] rounded-lg shadow-accent-200/90 shadow-md"
                     />
                 </article>
@@ -61,11 +64,13 @@ import CTA from './CTA.astro';
                         Coach sport santé diplômée d'état
                     </div>
                     <article class="coachCard_1 overflow-hidden col-start-4 col-span-3 row-start-2 row-span-3 ">
-                        <img 
+                        <Image 
                             src="/images/home/helena-jump.jpg"
-                            alt="helena"
+                            alt="helena fait un saut"
                             width={320}
                             height={448}
+                            loading=eager
+                            format='webp'
                             class="object-cover object-top rounded-lg max-h-96 shadow-accent-200/90 shadow-md"
                         />
                     </article>
