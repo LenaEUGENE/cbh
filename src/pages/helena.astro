@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/base.astro';
 import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+
 
 //import components
 import CTA from '../components/CTA.astro';
@@ -24,9 +26,9 @@ const gallery = await getCollection("gallery");
 			<div class="inner-section">
                 <span class="tagline text-accent-400">En savoir plus sur Coaching by Helena</span>
 				<!-- grid -->		
-				<div class="grid gap-10 lg:gap-12 xl:gap-14 md:grid-cols-2">
+				<div class="grid gap-10 grid-cols-2 lg:gap-8">
                     <div class="top">
-                        <h1 class="headline headline-h2 max-w-lg">Coaching by Helena se propose de vous accompagner dans vos objectifs de forme.</h1>
+                        <h1 class="headline headline-h2 max-w-lg leading-none">Coaching by Helena : votre rendez-vous sportif</h1>
                     </div>
                     <div class="bottom">
                         <p>
@@ -80,7 +82,7 @@ const gallery = await getCollection("gallery");
 					
 				</div>
                 <ul class="carousel grid gap-8 md:grid-cols-2">
-            {
+                    {
                             testimonials.map((testimonials) => (
                                 <li>
                                     <article class="testimonial-card min-h-fit bg-neutral-0 rounded-xl overflow-hidden p-6 text-neutral-700 shadow-neutral-50 shadow-lg">
@@ -105,10 +107,11 @@ const gallery = await getCollection("gallery");
                                                 <figcaption class="text-neutral-500 bg-brand-100 -mx-6 -mb-6">
                                                     <div class="-mx-2 flex items-center p-6">
                                                         <div class="testimonial-image-wrapper rounded-full">
-                                                            <img
-                                                                class="mx-2 object-cover object-center h-12 w-12 shrink-0 rounded-full bg-neutral-0 ring-accent-200 ring-4"
+                                                            <Image
+                                                                class="mx-2 object-cover object-center h-12 w-12 shrink-0 rounded-full bg-neutral-0 ring-accent-50 ring-4"
                                                                 width={128}
                                                                 height={128}
+                                                                loading=eager
                                                                 src={testimonials.data.img}
                                                                 alt={testimonials.data.img_alt}
                                                             />  
@@ -137,7 +140,7 @@ const gallery = await getCollection("gallery");
         <!-- Section gallery photos -->
         <section id="gallery" class="section bg-neutral-900">
             <div class="inner-section">
-                <div class="sectionTitle w-full mx-auto max-w-prose space-y-4 text-center pb-8 md:pb-12 lg:pb-16">
+                <div class="sectionTitle w-full mx-auto space-y-4 text-center pb-8 md:pb-12 lg:pb-16">
                     <div class="groupTitle space-y-1">
                         <span class="tagline text-neutral-0">Le mouvement c'est la vie!</span>
                         <h2 class="headline headline-h2 text-neutral-0">Le coaching by Helena en images</h2>
@@ -151,6 +154,8 @@ const gallery = await getCollection("gallery");
                 <article class="mb-4 rounded-lg overflow-clip">
                     <div class="flex items-center">
                         <img
+                            height="512"
+                            width="384"
                             class="object-cover w-full "
                             src={gallery.data.img}
                             alt={gallery.data.alt_img}
