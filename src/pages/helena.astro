@@ -21,8 +21,8 @@ const gallery = await getCollection("gallery");
 ---
 
 <Layout title="Helena d'AUBER - coach sportif certifiée d'État">
-    <!-- Hero -->
-    <section class="section fade-in animate-up">
+    
+    <section class="hero section fade-in animate-up">
         <div class="inner-section">
             <span class="tagline text-accent-400">En savoir plus sur Coaching by Helena</span>
             <!-- grid -->		
@@ -38,10 +38,10 @@ const gallery = await getCollection("gallery");
             </div>
             <!-- end grid -->
         </div>
-    <section/>
+    </section>
 
     <!-- why? -->
-    <section class="section pb-14">
+    <section class="why section pb-14">
         <div class="inner-section">
             <div class="grid gap-10 lg:gap-12 xl:gap-14 lg:grid-cols-3 xl:grid-cols-5">
                 <div class="left lg:col-span-1 xl:col-span-2">
@@ -72,7 +72,7 @@ const gallery = await getCollection("gallery");
     <Credentials />
 		
     <!-- testimonials -->
-    <div id="testimonials" class="section">
+    <section id="testimonials" class="testimonials section">
         <div class="inner-section">
             <div class="sectionTitle w-full mx-auto max-w-prose space-y-4 text-center pb-8 md:pb-12 lg:pb-16">
                 <div class="groupTitle space-y-1">
@@ -135,10 +135,10 @@ const gallery = await getCollection("gallery");
                 }
                 </ul>
         </div>
-    </div>
+    </section>
 
     <!-- Section gallery photos -->
-    <section id="gallery" class="section bg-neutral-900">
+    <section id="gallery" class="gallery section bg-neutral-900">
         <div class="inner-section">
             <div class="sectionTitle w-full mx-auto space-y-4 text-center pb-8 md:pb-12 lg:pb-16">
                 <div class="groupTitle space-y-1">
@@ -168,7 +168,7 @@ const gallery = await getCollection("gallery");
         </div>
     </section>
 
-        <!-- Section CTA -->
+    <!-- Section CTA -->
     <section class="section bg-brand-100">
         <div class="inner-section">
             <div class="grid grid-cols-1 gap-6 md:gap-8 md:grid-cols-2">
@@ -227,5 +227,5 @@ const gallery = await getCollection("gallery");
         </div>
     </section>
 
-	</Main>
+
 </Layout>
