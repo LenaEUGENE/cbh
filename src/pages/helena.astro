@@ -26,11 +26,11 @@ const gallery = await getCollection("gallery");
         <div class="inner-section">
             <span class="tagline text-accent-400">En savoir plus sur Coaching by Helena</span>
             <!-- grid -->		
-            <div class="grid gap-6 md:grid-cols-2 lg:gap-8">
-                <div class="top">
+            <div class="grid gap-10 lg:gap-12 xl:gap-14 lg:grid-cols-3 xl:grid-cols-5">
+                <div class="top lg:col-span-1 xl:col-span-2">
                     <h1 class="headline headline-h2 max-w-lg leading-none">Votre coach physique et mental</h1>
                 </div>
-                <div class="bottom">
+                <div class="bottom lg:col-span-2 xl:col-span-3">
                     <p>
                         J'offre aux personnes désireuses de faire le plein d'énergie, la mise en place d'un programme d'exercices physiques sur-mesure, ainsi que le suivi de leurs progrès.
                     </p>
@@ -47,7 +47,7 @@ const gallery = await getCollection("gallery");
                 <div class="left lg:col-span-1 xl:col-span-2">
                     <img 
                         src="/images/helena_1.jpg"
-                        alt=""
+                        alt="portrait d'Helena"
                         width={768}
                         height={768}
                         class="w-full object-cover object-center rounded-xl aspect-[3/5] mb-2 max-h-64 lg:max-h-96"
@@ -158,7 +158,7 @@ const gallery = await getCollection("gallery");
                         width="384"
                         class="object-cover w-full "
                         src={gallery.data.img}
-                        alt={gallery.data.alt_img}
+                        alt={gallery.data.img_alt}
                     />
                 </div>
             </article>

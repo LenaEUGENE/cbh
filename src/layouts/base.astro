@@ -1,4 +1,5 @@
 ---
+import ViewTransitions from "astro/components/ViewTransitions.astro";
 import "../styles/global.css";
 import { SEO } from "astro-seo";
 
@@ -27,8 +28,9 @@ import Footer from '../components/Footer.astro';
             image: "https://github.com/LenaEUGENE/cbh/blob/main/public/images/home/helena-coach.jpg?raw=true",
         }
       }}
+
+      <ViewTransitions />
     />
-    </head>
     <body class="relative bg-accent-20 ">
         <Header/>
         <main class="mt-8">

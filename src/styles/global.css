@@ -41,10 +41,10 @@ which suggests fs-base styling will be removed
 }
 
 /* Set core root fs-bases */
-html:focus-within {
+html {
   scroll-behavior: smooth;
-
 }
+
 
 /* Set core body fs-bases */
 body {

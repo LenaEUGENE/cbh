@@ -44,7 +44,7 @@ const testimonials = defineCollection({
 const gallery = defineCollection({
   schema: z.object({
     img: z.string(),
-    alt_img: z.string().optional(),
+    img_alt: z.string().optional(),
   }),
 });
 
